@@ -1,0 +1,40 @@
+{
+    "template": "Convert {var_1} to {var_2}",
+    "questions": [
+        {
+            "keys": ["variables_keys", "question", "given", "find", "strategy"],
+            "variables_keys": ["var_1", "var_2"],
+            "var_1": "Decimal",
+            "var_2": "Binary",
+            "question": "Convert {var_1} to {var_2}",
+            "given": [
+                {
+                    "variable": "{var_1}",
+                    "value": "random"
+                }
+            ],
+            "find": [
+                {
+                    "variable": "{var_2}"
+                }
+            ],
+            "strategy": {
+                "keys": [],
+                "operator": "divide",
+                "operand_1": "{var_1}",
+                "operand_2": 2,
+                "steps": [
+                    {
+                        "step": 1,
+                        "store": "remainder",
+                        "stop": {
+                            "operand_1": "{operand_1}",
+                            "operator": "==",
+                            "operand_2": "{operand_2}"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
