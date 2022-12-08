@@ -49,3 +49,5 @@ for _exp in res[1:]:
             print(alph[i]+"'",end='')
         else:
             print(alph[i],end='')
+
+print()
