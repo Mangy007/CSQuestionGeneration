@@ -115,8 +115,9 @@ def find_essential_prime_implicants(prime_implicants, minterms):
         if length < min:
             min = length
             ids = p
+    res=[str(prime_implicants[i]) for i in ids]
 
-    return [prime_implicants[i] for i in ids]
+    return res
 
 
 def multiply(result, product):
