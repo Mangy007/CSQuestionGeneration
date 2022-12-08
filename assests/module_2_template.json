@@ -30,7 +30,7 @@
                         "stop": {
                             "operand_1": "{operand_1}",
                             "operator": "==",
-                            "operand_2": "{operand_2}"
+                            "operand_2": 0
                         }
                     }
                 ]
