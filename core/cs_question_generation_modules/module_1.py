@@ -13,12 +13,14 @@ question_map = {
     9: "Octal to Hexadecimal",
     10: "Hexadecimal to Binary",
     11: "Hexadecimal to Octal",
-    12: "Hexadecimal to Decimal"
+    12: "Hexadecimal to Decimal",
+    13: "Decimal to BCD",
+    14: "Decimal to Gray Code"
 }
 
-question_type = randint(1,12)
+question_type = randint(1,len(question_map))
 value = randint(1,99999)
-print(question_type)
+print(question_map[question_type])
 print("Convert")
 
 if question_type == 1:
@@ -83,3 +85,11 @@ elif question_type == 12:
     converted_value = solver.decimal_to_hexadecimal(value)
     print("(",converted_value,")base16  -->  (?)base10")
     print(value)
+elif question_type == 13:
+    print("(",value,")base10  -->  (?)bcd")
+    converted_value = solver.decimal_to_bcd(value)
+    print(converted_value)
+elif question_type == 14:
+    print("(",value,")base10  -->  (?)gray_code")
+    converted_value = solver.decimal_to_gray_code(value)
+    print(converted_value)

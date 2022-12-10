@@ -44,3 +44,34 @@ def hexadecimal_to_octal():
 def hexadecimal_to_decimal():
     print('12')
     
+
+def decimal_to_bcd(value):
+
+    """
+        reverse the digits and iterate through 
+        all digits in rev and store each digit
+        binary conversion in bits
+    """
+    
+    if (value == 0) :
+        print("0000")
+        return
+ 
+    rev = 0
+ 
+    while (value > 0) :
+        rev = rev * 10 + (value % 10)
+        value = value // 10
+
+    bits = ""
+
+    while (rev > 0) :
+        b = str(rev % 10)
+        bits += "{0:04b}".format(int(b, 16)) + " "
+        rev = rev // 10
+
+    return bits
+
+def decimal_to_gray_code(value):
+    
+    return value ^ (value >> 1)
