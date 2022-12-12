@@ -15,10 +15,12 @@ question_map = {
     11: "Hexadecimal to Octal",
     12: "Hexadecimal to Decimal",
     13: "Decimal to BCD",
-    14: "Decimal to Gray Code"
+    14: "Decimal to Gray Code",
+    15: "1's Complement",
+    16: "2's Complement"
 }
 
-question_type = randint(1,len(question_map))
+question_type = randint(15,len(question_map))
 value = randint(1,99999)
 print(question_map[question_type])
 print("Convert")
@@ -92,4 +94,12 @@ elif question_type == 13:
 elif question_type == 14:
     print("(",value,")base10  -->  (?)gray_code")
     converted_value = solver.decimal_to_gray_code(value)
+    print(converted_value)
+elif question_type == 15:
+    print(question_map[question_type]," of ",value)
+    converted_value = solver.decimal_to_1s_complement(value)
+    print(converted_value)
+elif question_type == 16:
+    print(question_map[question_type]," of ",value)
+    converted_value = solver.decimal_to_2s_complement(value)
     print(converted_value)
