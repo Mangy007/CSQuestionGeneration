@@ -27,6 +27,7 @@
                     {
                         "step": 1,
                         "store": "remainder",
+                        "type": "iterator",
                         "stop": {
                             "operand_1": "{operand_1}",
                             "operator": "==",
