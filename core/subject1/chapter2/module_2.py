@@ -1,6 +1,5 @@
-import sys,random
-sys.path.append('./core/question_solver')
-import Kmap,utils
+import random
+from core.subject1.chapter2.solver import Kmap,utils
 
 
 str_terms = []
