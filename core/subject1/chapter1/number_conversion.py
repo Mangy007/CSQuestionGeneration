@@ -1,5 +1,5 @@
 from random import randint
-import core.subject1.chapter1.solver.module_1_solver as solver
+import core.subject1.chapter1.solver.number_conversion_solver as solver
 
 question_map = {
     1: "Decimal to Binary",

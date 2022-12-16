@@ -1,5 +1,5 @@
 import random
-from core.subject1.chapter2.solver import Kmap,utils
+from core.subject1.chapter2.solver import k_map_solver,utils
 
 
 str_terms = []
@@ -25,7 +25,7 @@ print("Minterms: ",t_min)
 t_minterms = [utils.Term(term) for term in str_terms]
 not_cares = [utils.Term(term) for term in terms_not_care]
 
-minterms = Kmap.Minterms(t_minterms, not_cares)
+minterms = k_map_solver.Minterms(t_minterms, not_cares)
 res=[]
 res=minterms.simplify()
 #print(res)
