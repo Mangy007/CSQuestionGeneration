@@ -9,9 +9,9 @@ file = open("config.json")
 data = json.load(file)
 
 for i in range(0,data['total_questions']):
-    value = randint(1,2) # total number of modules in the subject
+    value = randint(1,2) # total number of modules in the subject --> later need to be fetched from the list.json from core
     if value==1:
         number_conversion.generate_questions()
-    # else:
-    #     k_map.minimised_expressions()
+    else:
+        k_map.minimized_expression()
     print()
