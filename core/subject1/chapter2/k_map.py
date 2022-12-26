@@ -23,46 +23,48 @@ def minimized_expression():
             min_t='0'*rem_zero+min_t
         str_terms.append(min_t)
 
-    all_opt_min.append(str_terms)
+    
     #Minterms for option 1
     min_t=bin(minterm_range[no_minterms])[2:]
-    opt1=str_terms
+    opt1=str_terms.copy()
     if(len(min_t)<4):
         rem_zero=4-len(min_t)
         min_t='0'*rem_zero+min_t
     
     opt1.append(min_t)
-    all_opt_min.append(opt1)
 
     #Minterms for option 2
     min_t=bin(minterm_range[no_minterms+1])[2:]
-    opt2=opt1
+    opt2=opt1.copy()
     if(len(min_t)<4):
         rem_zero=4-len(min_t)
         min_t='0'*rem_zero+min_t
     
     opt2.append(min_t)
-    all_opt_min.append(opt2)
 
     #Minterms for option 3
     min_t=bin(minterm_range[no_minterms+2])[2:]
-    opt3=opt2
+    opt3=opt2.copy()
     if(len(min_t)<4):
         rem_zero=4-len(min_t)
         min_t='0'*rem_zero+min_t
     
     opt3.append(min_t)
-    all_opt_min.append(opt3)
 
+    all_opt_min.append(opt3)
+    all_opt_min.append(opt2)
+    all_opt_min.append(opt1)
+    all_opt_min.append(str_terms)
+    
     t_min=minterm_range[:no_minterms]
     t_min.sort()
-
+    #print(all_opt_min)
     print("Which of the following is the minimized SOP for the minterms: ",t_min)
 
     opts=[[],[],[],[]]
     for i in range(4):
-        str_terms=all_opt_min[i]
-        t_minterms = [utils.Term(term) for term in str_terms]
+        _str_terms=all_opt_min[i]
+        t_minterms = [utils.Term(term) for term in _str_terms]
         not_cares = [utils.Term(term) for term in terms_not_care]
 
         minterms = k_map_solver.Minterms(t_minterms, not_cares)
